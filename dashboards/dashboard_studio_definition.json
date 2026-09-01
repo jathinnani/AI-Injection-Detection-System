@@ -1,0 +1,33 @@
+{
+  "version": "1.1",
+  "title": "Zimbra Threat Detection SOC Dashboard",
+  "description": "Real-Time SIEM Monitoring for Zimbra Command Injection (CVE-2024-45519)",
+  "dataSources": {
+    "ds_single_value_alert": {
+      "type": "ds.search",
+      "options": {
+        "query": "source=\"*zimbra*\" (\"swatchdog\" OR \"snmp_notify\") (\"wget\" OR \"sh\" OR \"curl\" OR \"rm\" OR \"bash\") | stats count as attack_count"
+      }
+    },
+    "ds_table_alerts": {
+      "type": "ds.search",
+      "options": {
+        "query": "source=\"*zimbra*\" \"swatchdog\" (\"wget\" OR \"sh\" OR \"curl\" OR \"rm\") | table _time, _raw"
+      }
+    }
+  },
+  "visualizations": {
+    "viz_alert_single_value": {
+      "type": "splunk.singlevalue",
+      "title": "Malicious Exploits Detected",
+      "dataSources": {
+        "primary": "ds_single_value_alert"
+      },
+      "options": {
+        "majorValue": "> primary | seriesByName(\"attack_count\")",
+        "trendDisplayMode": "absolute",
+        "sparkline": false
+      }
+    }
+  }
+}

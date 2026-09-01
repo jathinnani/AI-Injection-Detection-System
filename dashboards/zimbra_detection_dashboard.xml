@@ -1,0 +1,66 @@
+<dashboard version="1.1" theme="dark">
+  <label>Zimbra Threat Detection &amp; SIEM SOC Monitor</label>
+  <description>Real-Time Detection of Command Injection &amp; Exploitation Attempts (CVE-2024-45519 / Swatchdog SNMP)</description>
+  
+  <row>
+    <panel>
+      <single>
+        <title>Active Injection Exploits Detected</title>
+        <search>
+          <query>source="*zimbra*" ("swatchdog" OR "snmp_notify") ("wget" OR "sh" OR "curl" OR "rm" OR "bash") | stats count</query>
+          <earliest>0</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">block</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0xdc4e41"]</option>
+        <option name="rangeValues">[0]</option>
+        <option name="underLabel">Critical Incidents</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Total Logs Ingested</title>
+        <search>
+          <query>source="*zimbra*" | stats count</query>
+          <earliest>0</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="underLabel">Application Log Records</option>
+      </single>
+    </panel>
+    <panel>
+      <chart>
+        <title>Log Traffic Breakdown (Benign vs Malicious)</title>
+        <search>
+          <query>source="*zimbra*" | eval Status=if(like(_raw, "%swatchdog%") AND (like(_raw, "%wget%") OR like(_raw, "%sh%") OR like(_raw, "%curl%") OR like(_raw, "%rm%")), "CRITICAL: Exploit Attack", "NORMAL: System Traffic") | stats count by Status</query>
+          <earliest>0</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.legend.placement">right</option>
+      </chart>
+    </panel>
+  </row>
+
+  <row>
+    <panel>
+      <table>
+        <title>Identified Malicious Security Events</title>
+        <search>
+          <query>source="*zimbra*" "swatchdog" ("wget" OR "sh" OR "curl" OR "rm") | rex field=_raw "(?&lt;timestamp&gt;^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2})\s(?&lt;level&gt;\w+)\s+\[(?&lt;thread&gt;[^\]]+)\]\s(?&lt;component&gt;[^\s]+)\s+-\s+(?&lt;payload&gt;.*)" | table timestamp level thread component payload</query>
+          <earliest>0</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="count">10</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="rowNumbers">true</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

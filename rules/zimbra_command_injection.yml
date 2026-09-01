@@ -1,0 +1,41 @@
+﻿title: Zimbra Collaboration Suite SNMP Swatchdog Command Injection
+id: e4f5a6b7-8910-4c12-b345-6789abcdef01
+status: test
+description: Detects command injection attempts targeting the Zimbra Collaboration Suite SNMP notification system and the swatchdog log monitor component (associated with CVE-2024-45519). Attackers inject shell metacharacters and download utilities (wget, curl, sh) into unvalidated input parameters.
+references:
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-45519
+    - https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+    - https://cert.pl/posts/2024/09/zimbra-cve-2024-45519/
+author: Threat Detection Engineering Team
+date: 2026/08/25
+modified: 2026/08/25
+tags:
+    - attack.execution
+    - attack.t1059.004
+    - attack.initial_access
+    - attack.t1190
+    - attack.lateral_movement
+    - attack.t1210
+    - cve.2024.45519
+logsource:
+    category: application
+    product: zimbra
+    service: mailbox / postjournal / swatchdog
+detection:
+    selection_target:
+        - 'swatchdog'
+        - 'snmp_notify'
+    selection_payload:
+        - 'wget'
+        - 'curl'
+        - 'sh'
+        - 'bash'
+        - 'rm'
+        - 'chmod'
+        - '/dev/tcp'
+        - 'python'
+        - 'nc'
+    condition: selection_target and selection_payload
+falsepositives:
+    - Legitimate administrative maintenance scripts invoking custom alert handlers (highly infrequent in swatchdog logs).
+level: critical

