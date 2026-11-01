@@ -7,9 +7,9 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from app.core.rate_limit import limiter
-from app.ml.inference import detector
-from app.schemas.detection import BatchDetectionRequest, DetectionRequest, DetectionResponse
+from .core.rate_limit import limiter
+from .ml.inference import detector
+from .schemas.detection import BatchDetectionRequest, DetectionRequest, DetectionResponse
 
 logging.basicConfig(level=logging.INFO)
 app = FastAPI(title="AegisAI InjectionGuard API", version="1.0.0")

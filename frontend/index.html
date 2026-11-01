@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AegisAI InjectionGuard</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="header">
+        <div>
+          <p class="eyebrow">MULTI-CHANNEL SECURITY</p>
+          <h1>AegisAI</h1>
+          <p class="tagline">Injection detection and response for modern applications.</p>
+        </div>
+        <div class="status">
+          <span id="status-dot" class="dot"></span>
+          <span id="status-text">loading</span>
+        </div>
+      </header>
+
+      <div id="error-banner" class="error hidden">
+        <span id="error-message">Backend unavailable.</span>
+        <button id="retry" type="button">Retry</button>
+      </div>
+
+      <section class="kpis" aria-label="system overview">
+        <article>
+          <span>Total Detections</span>
+          <strong id="total-detections">0</strong>
+          <small>Last 60s</small>
+        </article>
+        <article>
+          <span>Active Monitors</span>
+          <strong id="active-monitors">0</strong>
+          <small>Live</small>
+        </article>
+        <article>
+          <span>Blocked Attempts</span>
+          <strong id="blocked-attempts">0</strong>
+          <small>Prevented</small>
+        </article>
+        <article>
+          <span>System Load</span>
+          <strong id="system-load">0%</strong>
+          <small>Simulated</small>
+        </article>
+      </section>
+
+      <div class="workspace">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Threat surface</h2>
+            <span>Activity</span>
+          </div>
+          <canvas id="activity-chart" width="640" height="220" aria-label="Threat activity chart"></canvas>
+
+          <div class="panel-heading checkpoint">
+            <h2>Detection test</h2>
+          </div>
+
+          <form id="detect-form" class="detector-form">
+            <label for="payload">Payload input</label>
+            <textarea id="payload" rows="5" placeholder="Example: SELECT * FROM users WHERE name = 'admin' OR 1=1"></textarea>
+            <button type="submit">Analyze input</button>
+          </form>
+
+          <div id="result" class="result hidden" aria-live="polite"></div>
+
+          <aside class="feed-panel">
+            <div class="panel-heading">
+              <h2>Live alert feed</h2>
+              <span id="feed-count">0 events</span>
+            </div>
+            <div id="feed" class="feed" aria-live="polite"></div>
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script type="module" src="./js/dashboard.js"></script>
+  </body>
+</html>

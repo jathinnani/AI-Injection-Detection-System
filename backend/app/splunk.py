@@ -2,7 +2,7 @@ import logging
 
 import httpx
 
-from app.core.config import SPLUNK_API_TOKEN, SPLUNK_HEC_TOKEN, SPLUNK_HEC_URL, SPLUNK_URL
+from .core.config import SPLUNK_API_TOKEN, SPLUNK_HEC_TOKEN, SPLUNK_HEC_URL, SPLUNK_URL
 
 LOGGER = logging.getLogger(__name__)
 

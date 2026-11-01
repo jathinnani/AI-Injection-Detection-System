@@ -2,7 +2,7 @@ import logging
 import re
 from pathlib import Path
 
-from app.schemas.detection import DetectionResponse
+from ..schemas.detection import DetectionResponse
 
 LOGGER = logging.getLogger(__name__)
 MODEL_PATH = Path(__file__).resolve().parents[2] / "ml" / "model.joblib"
